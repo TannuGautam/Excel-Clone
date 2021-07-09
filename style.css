@@ -1,0 +1,231 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+
+/* outline */
+.main-container{
+    height: 100vh;
+
+}
+
+.title-bar{
+    height: 5vh;
+    background-color: #107c41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    color:white;
+}
+
+.menu-bar {
+    height: 5vh;
+    display: flex;
+    background-color: #107c41;
+    color: white;
+}
+
+.menu-icon-bar {
+    height: 6vh;
+    background-color: rgb(241, 235, 235);
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon:hover{
+    cursor:pointer;
+    background-color: lightgray;
+}
+
+.menu-item.selected{
+    background-color: #fff;
+    color:#107c41;
+}
+
+.menu-item{
+    padding-left:10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 18;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover{
+    background-color:#096434;
+    cursor: pointer;
+}
+
+.menu-item.selected:hover{
+    background-color: #fff;
+    cursor:default;
+}
+
+.font-family-selector{
+
+    width: 200px;
+}
+
+.selector{
+    height: 30px;
+    font-size: 18px;
+}
+
+.selector option{
+    font-size: 14px;
+}
+
+.formula-container {
+    height: 5vh;
+    border: 10px solid purple
+}
+
+
+.sheets-bar
+{
+    
+    height: 4vh;
+    display: flex;
+    
+}
+
+ .sheetleft, .sheetright{
+    font-size: 30px;
+    width:30px;
+    height:100%;
+}
+
+.sheetadd{
+    font-size: 23px;
+    color: #107c41;
+    width:40px;
+}
+
+.sheetadd:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.sheetleft:hover, .sheetright:hover{
+    color: lightgray;
+    height:100%;
+    cursor: pointer;
+}
+
+.sheetadd{
+    
+    margin-left: 10px;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+}
+ 
+.scrollar{
+    
+    width: 70px;
+}
+
+
+.sheet-tab-container{
+    border: 1px solid lightgray;
+    width: calc(100vw - 110px);
+}
+
+.sheet-tab{
+    border-bottom: 4px solid#107c41;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-right: 2px solid lightgreen;
+}
+
+.sheet-tab{
+    cursor: default;
+}
+
+.grid-container{
+    height: 75vh;
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.select-all{
+    width:30px;
+    height:30px;
+    border: 1px solid lightgray;
+    background-color: rgb(241, 239, 239);
+}
+
+.col_container{
+    width: calc(100vw - 30px);
+    height: 30px;
+    border: 1px solid lightgray;
+    display: flex;
+
+}
+
+.row_container{
+    width:30px;
+    height:calc(75vh - 30px);
+    border: 1px solid lightgray;
+}
+
+.input-cells-container{
+    width: calc(100vw - 30px);
+    height: calc(75vh - 30px);
+    border: 1px solid lightgray;
+}
+
+.sheets-bar{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+}
+
+.column-name{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgray;
+    font-weight: 800;
+}
+
+.row-name{
+    height: 30px;
+    font-weight: 800;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+}
+
+.input-cell{
+    width: 100px;
+    height: 30px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;;
+}

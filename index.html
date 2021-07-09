@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="main-container">
+        <div class ="title-bar">Excel</div>
+        <div class = "menu-bar">
+            <div class = "file menu-item">File</div>
+            <div class = "home selected menu-item" >Home</div>
+            <div class = "edit menu-item">Edit</div>
+            <div class = "insert menu-item">Insert</div>
+            <div class = "layout menu-item">Layout</div>
+            <div class = "help menu-item">Help</div>
+        </div>
+        <div class = "menu-icon-bar">
+            
+            <div class = "menu-icon">
+                <i class="fas fa-cut cut"></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="far fa-copy copy"></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="far fa-clipboard paste"></i>
+            </div>
+
+            <select class = "selector font-size">
+                <option value = "16">16</option>
+                <option value = "18">18</option> 
+                <option value = "20">20</option>
+                <option value = "22">22</option>
+                <option value = "24">24</option>
+                <option value = "26">26</option> 
+                <option value = "28">28</option>
+                <option value = "30">30</option>
+            </select>
+
+            <select class = "selector font-family">
+                <option value = "Monospace">Monospace</option>
+                <option value = "Sans-serif">Sans-serif</option>
+                <option value = "Arial">Arial</option>
+                <option value = "Times New Roman">Times New Roman</option>
+                <option value = "Times">Times</option>
+                <option value = "Courier New">Courier New</option>
+                <option value = "Courier">Courier</option>
+                <option value = "Verdana">Verdana</option>
+                <option value = "Georgia">Georgia</option>
+                <option value = "Palatino">Palatino</option>
+                <option value = "Bookman">Bookman</option>
+                <option value = "Impact">Impact</option>
+                <option value = "Cursive">Cursive</option>
+            </select>
+
+            <div class = "menu-icon">
+                <i class="fas fa-bold bold "></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="fas fa-underline underline"></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="fas fa-italic italics"></i> 
+            </div>
+
+            <div class = "menu-icon">
+                <i class="fas fa-align-left left"></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="fas fa-align-center center"></i>
+            </div>
+            <div class = "menu-icon">
+                <i class="fas fa-align-right right"></i>
+            </div>
+
+            <div class = "menu-icon">
+                <i class="fas fa-fill-drip fillColor"></i>
+            </div>
+
+            <div class = "menu-icon">
+                <i class="fas fa-font textColor"></i>
+            </div>
+
+        </div>
+        <!-- nos new open save container -->
+        <!-- <div class="nos-container">
+            <span class="material-icons-outlined material-icons new">
+                add_circle_outline
+            </span>
+            <span class="material-icons-outlined material-icons ">
+                folder_open
+            </span>
+            <input type="file" name="" class="open">
+            <span class="material-icons-outlined material-icons save">
+                file_download
+            </span>
+        </div> -->
+        
+        <div class="formula-container">
+            <input type = "text" class = "address-input fbar"></input>
+            <input type = "text" class = "formula-input fbar"></input>
+        </div>
+        
+        <div class="grid-container">
+            <!-- nothing is there -->
+            <div class="select-all"></div>
+
+            <!-- 1 - 2 -->
+            <div class="col_container">
+                <div class = "column-name">A</div>
+                <div class = "column-name">B</div>
+                <div class = "column-name">C</div>
+            </div>
+
+            <!-- A - Z  -->
+            <div class="row_container">
+                <div class = "row-name">1</div>
+                <div class = "row-name">2</div>
+                <div class = "row-name">3</div>
+            </div>
+
+            <!-- tables ie row n column -->
+            <div class="input-cells-container">
+                <div class = "row">
+                    <div class = "input-cell" contenteditable="true"></div>
+                    <div class = "input-cell" contenteditable="true"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sheets-bar">
+           <div class = "scrollar">
+                    
+                <i class="fas fa-caret-left sheetleft"></i>
+  
+                <i class="fas fa-caret-right sheetright"></i>    
+           </div>
+
+            <div class = "sheetadd">
+                <i class="fas fa-plus-circle "></i>
+            </div>
+
+            <div class ="sheet-tab-container">
+                <div class ="sheet-tab">
+                    Sheet1
+                </div>
+            </div>
+            <!-- <div class="add-sheet_btn-container">
+                add
+            </div>
+            <div class="sheet-list">
+                <div class="sheet active" idx ="0">Sheet 1</div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <script src="grid.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
