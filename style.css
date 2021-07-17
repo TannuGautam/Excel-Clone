@@ -90,9 +90,14 @@ body{
     font-size: 14px;
 }
 
-.formula-container {
+.formula-container {  
     height: 5vh;
-    border: 10px solid purple
+    display: flex;
+    align-items: center;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    background:rgb(241, 235, 235);
+    border: 2px solid lightgray;
 }
 
 
@@ -144,10 +149,10 @@ body{
 .sheet-tab-container{
     border: 1px solid lightgray;
     width: calc(100vw - 110px);
+    display: flex;
 }
 
 .sheet-tab{
-    border-bottom: 4px solid#107c41;
     padding-left: 10px;
     padding-right: 10px;
     width:80px;
@@ -156,16 +161,27 @@ body{
     justify-content: center;
     font-weight: 600;
     border-right: 2px solid lightgreen;
+    cursor: default;
 }
 
-.sheet-tab{
+.sheet-tab.active{
+
+    border-bottom: 4px solid#107c41;
+    
+}
+
+.sheet-tab.active:hover{
+
     cursor: default;
+    background-color: #fff;
+
 }
 
 .grid-container{
     height: 75vh;
     display: flex; 
     flex-wrap: wrap; 
+
 }
 
 .select-all{
@@ -180,6 +196,7 @@ body{
     height: 30px;
     border: 1px solid lightgray;
     display: flex;
+    overflow: hidden;
 
 }
 
@@ -187,12 +204,14 @@ body{
     width:30px;
     height:calc(75vh - 30px);
     border: 1px solid lightgray;
+    overflow: hidden;
 }
 
 .input-cells-container{
     width: calc(100vw - 30px);
     height: calc(75vh - 30px);
     border: 1px solid lightgray;
+    overflow: scroll;
 }
 
 .sheets-bar{
@@ -202,16 +221,16 @@ body{
 }
 
 .column-name{
-    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-right: 1px solid lightgray;
     font-weight: 800;
+    min-width: 100px;
 }
 
 .row-name{
-    height: 30px;
+    min-height: 30px;
     font-weight: 800;
     border-bottom: 1px solid lightgray;
     display: flex;
@@ -224,8 +243,77 @@ body{
 }
 
 .input-cell{
-    width: 100px;
-    height: 30px;
+    min-width: 100px;
+    min-height: 30px;
     border-bottom: 1px solid lightgray;
-    border-right: 1px solid lightgray;;
+    border-right: 1px solid lightgray;
+    outline-color: #107c41;
+    
+}
+
+.input-cell.selected{
+    border: 2px solid#107c41;
+}
+
+
+.formula-editor
+{
+    height:70%;
+    border: 1px solid lightgray;
+    background-color: #fff;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.selected-cell
+{
+    width:120px;
+}
+
+.function-sign
+{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formula-input
+{
+    width: calc(100vw - 160px);
+    outline-color: #107c41;
+}
+
+img{
+    height: 20px;
+    width: 16px
+}
+
+.menu-icon.selected
+{
+    background-color: lightgray;
+}
+
+
+
+.top-cell-selected-cell
+{
+    border-top: none;
+}
+
+.bottom-cell-selected
+{
+    border-bottom: 1px solid lightgray;
+}
+
+.right-cell-selected
+{
+    border-right: 1px solid lightgray;
+}
+
+.left-cell-selected
+{
+    border-left: none;
 }
