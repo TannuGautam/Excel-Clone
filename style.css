@@ -208,8 +208,8 @@ body{
 }
 
 .input-cells-container{
-    width: calc(100vw - 30px);
-    height: calc(75vh - 30px);
+    max-width: calc(100vw - 30px);
+    max-height: calc(75vh - 30px);
     border: 1px solid lightgray;
     overflow: scroll;
 }
@@ -256,7 +256,7 @@ body{
 }
 
 
-.formula-editor
+.formula-editor,.formula-input
 {
     height:70%;
     border: 1px solid lightgray;
@@ -317,3 +317,25 @@ img{
 {
     border-left: none;
 }
+
+.color-picker{
+
+    position: absolute;
+    border: none;
+    padding: 0px;
+    margin: 2px;
+    width: 30px;
+    height: 11.5px;
+    top: 23.5px;
+    left: 1px;
+    cursor: pointer;
+}
+
+.textColor , .fillColor{
+    position: relative;
+}
+
+.textColor:hover , .fillColor:hover{
+    background-color: lightgray;
+}
+

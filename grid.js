@@ -8,13 +8,15 @@ let rows = 100;
 
 let cols = 26;
 
+let formulaBar = document.querySelector(".formula-input");
+
 let alignIcon = document.querySelectorAll(".align-icon");
 
 let biuToggle = document.querySelectorAll(".style-icon");
 
 let inputCell = document.querySelectorAll(".input-cell");
 
-for(let i = 0; i <= cols; i++)
+for(let i = 0; i < cols; i++)
 {
     let colBox = document.createElement("div");
 
@@ -25,7 +27,7 @@ for(let i = 0; i <= cols; i++)
     colContainer.appendChild(colBox);
 }
 
-for(let i = 0; i <= rows; i++)
+for(let i = 0; i < rows; i++)
 {
     let rowBox = document.createElement("div");
 
@@ -112,36 +114,6 @@ alignIcon.forEach(aligniconselected => {
 //     })
 // })
 
-//address input
-let allCells = document.querySelectorAll(".input-cells-container .input-cell")
-
-let addressInput = document.querySelector(".selected-cell")
-
-for(let i = 0; i < allCells.length; i++)
-{
-    allCells[i].addEventListener("click", function()
-    {
-        let rid = allCells[i].getAttribute("rid");
-
-        let cid = allCells[i].getAttribute("cid");
-
-        rid = Number(rid);
-
-        cid = Number(cid);
-
-        let address = `${String.fromCharCode(65 + cid)}${rid + 1}`
-
-        
-
-        addressInput.value = address;
-
-        // console.log(addressInput.value);
-
-        addressInput.innerHTML = addressInput.value;
-    })
-}
-
-allCells[0].click();
 
 
 

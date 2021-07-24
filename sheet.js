@@ -6,6 +6,8 @@ let firstSheet = document.querySelector(".sheet-tab");
 
 firstSheet.addEventListener("click", makeMeActive);
 
+//firstSheet.click();
+
 addSheetBtn.addEventListener("click", function()
 {
     //create sheet
@@ -35,6 +37,7 @@ addSheetBtn.addEventListener("click", function()
     newSheet.classList.add("active");
 
     //new sheet create
+
     newSheet.addEventListener("click", makeMeActive);
 })
 
@@ -50,6 +53,6 @@ function makeMeActive(e)
     }
 
     sheet.classList.add("active");
+    
 }
-
 

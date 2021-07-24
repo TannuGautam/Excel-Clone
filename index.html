@@ -59,32 +59,44 @@
                 <option value = "Cursive">Cursive</option>
             </select>
 
-            <div class = "menu-icon">
-                <i class="fas fa-bold bold "></i>
+            <div class = "menu-icon style-icon bold">
+                <i class="fas fa-bold boldI "></i>
             </div>
-            <div class = "menu-icon">
-                <i class="fas fa-underline underline"></i>
+            <div class = "menu-icon style-icon underline">
+                <i class="fas fa-underline underlineI"></i>
             </div>
-            <div class = "menu-icon">
-                <i class="fas fa-italic italics"></i> 
+            <div class = "menu-icon style-icon italic">
+                <i class="fas fa-italic italicsI"></i> 
             </div>
 
-            <div class = "menu-icon">
+            <div class = "menu-icon selected align-icon left">
                 <i class="fas fa-align-left left"></i>
             </div>
-            <div class = "menu-icon">
+            <div class = "menu-icon align-icon center">
                 <i class="fas fa-align-center center"></i>
             </div>
-            <div class = "menu-icon">
+            <div class = "menu-icon align-icon right">
                 <i class="fas fa-align-right right"></i>
             </div>
 
-            <div class = "menu-icon">
-                <i class="fas fa-fill-drip fillColor"></i>
+            <div class = "menu-icon fillColor">
+                <input class="color-picker background-color-picker" type ="color" value="#ffffff" />
+                <i class="fas fa-fill-drip fillcolor"></i>
             </div>
 
-            <div class = "menu-icon">
-                <i class="fas fa-font textColor"></i>
+            <div class = "menu-icon textColor">
+                <input class="color-picker text-color-picker" type="color">
+                <i class="fas fa-font textcolor"></i>
+            </div>
+
+            <div class =  "menu-icon new">
+                <i class="fas fa-folder-plus"></i>
+            </div>
+            <div class =  "menu-icon open">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <div class =  "menu-icon save">
+                <i class="fas fa-save"></i>
             </div>
 
         </div>
@@ -103,8 +115,11 @@
         </div> -->
         
         <div class="formula-container">
-            <input type = "text" class = "address-input fbar"></input>
-            <input type = "text" class = "formula-input fbar"></input>
+            <div class = "formula-editor selected-cell"></div>
+            <div class = "function-sign">
+                <img src= "fx-sign.png"/>
+            </div>
+            <input type = text" class = "formula-input formulabar" ></input>
         </div>
         
         <div class="grid-container">
@@ -113,24 +128,24 @@
 
             <!-- 1 - 2 -->
             <div class="col_container">
-                <div class = "column-name">A</div>
+                <!-- <div class = "column-name">A</div>
                 <div class = "column-name">B</div>
-                <div class = "column-name">C</div>
+                <div class = "column-name">C</div> -->
             </div>
 
             <!-- A - Z  -->
             <div class="row_container">
-                <div class = "row-name">1</div>
+                <!-- <div class = "row-name">1</div>
                 <div class = "row-name">2</div>
-                <div class = "row-name">3</div>
+                <div class = "row-name">3</div> -->
             </div>
 
             <!-- tables ie row n column -->
             <div class="input-cells-container">
-                <div class = "row">
+                <!-- <div class = "row">
                     <div class = "input-cell" contenteditable="true"></div>
                     <div class = "input-cell" contenteditable="true"></div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -147,7 +162,7 @@
             </div>
 
             <div class ="sheet-tab-container">
-                <div class ="sheet-tab">
+                <div class ="sheet-tab active" idx = "0">
                     Sheet1
                 </div>
             </div>
@@ -159,7 +174,10 @@
             </div> -->
         </div>
     </div>
-    <!-- <script src="grid.js"></script> -->
+    <script src="grid.js"></script>
+    <script src="sheet.js"></script>
+    <script src="format.js"></script>
+    <script src="formula.js"></script>
     <!-- <script src="script.js"></script> -->
 </body>
 </html>
