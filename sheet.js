@@ -4,9 +4,13 @@ let sheetList = document.querySelector(".sheet-tab-container");
 
 let firstSheet = document.querySelector(".sheet-tab");
 
+let sheetDB = [];
+
+let sheetArray = [];
+
 firstSheet.addEventListener("click", makeMeActive);
 
-//firstSheet.click();
+firstSheet.click();
 
 addSheetBtn.addEventListener("click", function()
 {
@@ -37,6 +41,9 @@ addSheetBtn.addEventListener("click", function()
     newSheet.classList.add("active");
 
     //new sheet create
+    createSheet();
+
+    sheetDB = sheetArray[lastidx + 1];
 
     newSheet.addEventListener("click", makeMeActive);
 })
@@ -53,6 +60,74 @@ function makeMeActive(e)
     }
 
     sheet.classList.add("active");
+
+    let idx = sheet.getAttribute("idx");
+
+    if(!sheetArray[idx])
+    {
+        //ui has idx 
+        //only when one intialize workbook
+        createSheet();
+    }
+
+    //current set
+    sheetDB = sheetArray[idx];
+    setUI();
     
 }
 
+function createSheet()
+{
+    let newDB = [];
+
+    for(let i = 0; i < rows; i++)
+    {
+        let row = [];
+
+        for(let j = 0; j < cols; j++)
+        {
+            let cell = {
+                bold : "normal",
+                italic: "normal",
+                underline: "none",
+                fontsize: "16",
+                hAlign: "center",
+                fontFamily: "sans-serif",
+                color: "black",
+                bColor: "none",
+                value: "",
+                formula: "",
+                children: []
+            }
+
+            let elem = document.querySelector(`.input-cell[rid = "${i}"][cid = "${j}"]`);
+
+            elem.innerText = "";
+
+            row.push(cell);
+        }
+
+        newDB.push(row);
+
+        // console.log(sheetDB)
+
+    }
+
+    sheetArray.push(newDB);
+}
+
+function setUI()
+{
+    for(let i = 0; i < rows; i++)
+    {
+        for(let j = 0; j < cols; j++)
+        {
+
+            let elem = document.querySelector(`.input-cell[rid = "${i}"][cid = "${j}"]`);
+
+            let value = sheetDB[i][j].value;
+
+            elem.innerText = value;
+        }
+    }
+}

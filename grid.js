@@ -16,7 +16,7 @@ let biuToggle = document.querySelectorAll(".style-icon");
 
 let inputCell = document.querySelectorAll(".input-cell");
 
-for(let i = 0; i < cols; i++)
+for(let i = 0; i <= cols; i++)
 {
     let colBox = document.createElement("div");
 
@@ -27,7 +27,7 @@ for(let i = 0; i < cols; i++)
     colContainer.appendChild(colBox);
 }
 
-for(let i = 0; i < rows; i++)
+for(let i = 0; i <= rows; i++)
 {
     let rowBox = document.createElement("div");
 

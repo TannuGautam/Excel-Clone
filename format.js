@@ -6,34 +6,7 @@ let italicBtn = document.querySelector(".italic");
 
 let fontSizeEl = document.querySelector(".font-size");
 
-let sheetDB = [];
 
-for(let i = 0; i < 100; i++)
-{
-    let row = [];
-
-    for(let j = 0; j < 26; j++)
-    {
-        let cell = {
-            bold : "normal",
-            italic: "normal",
-            underline: "none",
-            fontsize: "16",
-            hAlign: "center",
-            fontFamily: "sans-serif",
-            color: "black",
-            bColor: "none",
-            value: "",
-            formula: "",
-        }
-        row.push(cell);
-    }
-
-    sheetDB.push(row);
-
-    // console.log(sheetDB)
-
-}
 
 //address input
 let allCells = document.querySelectorAll(".input-cells-container .input-cell")
@@ -89,14 +62,6 @@ for(let i = 0; i < allCells.length; i++)
             underlineBtn.classList.add("selected");
         }
         
-        // if(cellObject.fontsize = "16")
-        // {
-        //     fontSizeEl.fontSize = "val";
-        // }
-        // else
-        // {
-        //     fontSizeEl.fontSize = "16";
-        // }
     
     })
 }
@@ -294,6 +259,133 @@ function findUICellElement()
     
     return uiCellElement;
 
+}
+
+//cut copy paste
+let copyBtn = document.querySelector(".copy");
+
+copyBtn.addEventListener("click", function()
+{
+    let uiCellElement = findUICellElement();
+    
+    let copyText = uiCellElement.innerText;
+
+    let input = document.createElement('input');
+
+    uiCellElement.appendChild(input);
+
+    console.log(copyText);
+
+    input.value = copyText;
+
+    //console.log(copyText);
+
+    input.select();
+
+    document.execCommand("copy");
+
+    input.remove();
+})
+
+
+let cutBtn = document.querySelector(".cut");
+
+cutBtn.addEventListener("click", function(e)
+{
+    let uiCellElement = findUICellElement();
+    
+    let cutText = uiCellElement.innerText;
+
+    let input = document.createElement('input');
+
+    uiCellElement.appendChild(input);
+
+    input.value = cutText;
+
+    console.log(cutText);
+
+    input.select();
+
+    let cutT;
+
+    try{
+
+      cutT  = document.execCommand("cut");
+
+      input.remove();
+    }
+    catch(err)
+    {
+        cutT = false;
+    }
+
+    if(cutT)
+    {
+        uiCellElement.style.display = 'none';
+ 
+    }
+
+})
+
+let pasteBtn = document.querySelector(".paste");
+
+pasteBtn.addEventListener("click", function()
+{
+    // let uiCellElement = findUICellElement();
+
+    // let pasteText = uiCellElement.innerText;
+
+    // let input = document.createElement('input');
+
+    // uiCellElement.appendChild(input);
+
+    // input.value = pasteText;
+
+    // input.select();
+
+    // //input.focus();
+
     
 
-}
+    // // let pT;
+
+    // // try{
+
+    // //   pT  = document.execCommand("paste");
+
+    // //   input.remove();
+    // // }
+    // // catch(err)
+    // // {
+    // //     pT = false;
+    // // }
+
+    // // if(pT)
+    // // {
+    // //     uiCellElement.style.display = pasteText + pasteText;
+ 
+    // // }
+
+    // document.execCommand("copy"); 
+
+    // input.remove();
+    let uiCellElement = findUICellElement();
+    
+    let copyText = uiCellElement.innerText;
+
+    let input = document.createElement('input');
+
+    uiCellElement.appendChild(input);
+
+    console.log(copyText);
+
+    input.value = copyText;
+
+    //console.log(copyText);
+
+    input.select();
+
+    document.execCommand("paste");
+
+    input.remove();
+})
